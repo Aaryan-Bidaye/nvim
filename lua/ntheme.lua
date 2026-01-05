@@ -1,0 +1,1 @@
+/home/aaryanbidaye/.config/omarchy/current/theme/ntheme.lua
