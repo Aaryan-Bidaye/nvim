@@ -26,8 +26,8 @@ hi StatusLine   ctermfg=15 ctermbg=0 cterm=bold
 hi StatusLineNC ctermfg=8  ctermbg=0
 
 hi Visual       ctermfg=0  ctermbg=15
-hi Search       ctermfg=0  ctermbg=3
-hi IncSearch    ctermfg=0  ctermbg=11
+hi IncSearch ctermfg=0 ctermbg=11 guifg=#282c34 guibg=#e7c547
+hi Search    ctermfg=0 ctermbg=3  guifg=#282c34 guibg=#f0c674
 
 hi MatchParen   ctermfg=0  ctermbg=6 cterm=bold
 

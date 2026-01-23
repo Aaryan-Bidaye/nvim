@@ -490,10 +490,13 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
+        clangd = {
+          cmd = { 'clangd', '--background-index', '--clang-tidy' },
+          filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
+        },
+        gopls = {},
+        pyright = {},
+        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -532,15 +535,20 @@ require('lazy').setup({
       --
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
+      -- You can add other tools here that you want Mason to install for you.
       local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
-      })
+
+      -- IMPORTANT: clangd is provided by the system on your machine (pacman), not Mason.
+      ensure_installed = vim.tbl_filter(function(name)
+        return name ~= 'clangd'
+      end, ensure_installed)
+
+      vim.list_extend(ensure_installed, { 'stylua' })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
-        automatic_installation = false,
+        automatic_installation = true,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
@@ -552,6 +560,15 @@ require('lazy').setup({
           end,
         },
       }
+      -- Neovim 0.11+ native LSP config (no lspconfig dependency) for system clangd
+      vim.lsp.config('clangd', {
+        cmd = { 'clangd', '--background-index', '--clang-tidy' },
+        filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
+        capabilities = capabilities,
+      })
+
+      -- Enable clangd for matching buffers
+      vim.lsp.enable 'clangd'
     end,
   },
 

@@ -9,7 +9,7 @@ return {
           section_separators = '',
           --component_separators = { left = '', right = '' },
           component_separators = '',
-          globalstatus = true,
+          globalstatus = false,
         },
       }
     end,

@@ -1,6 +1,6 @@
 -- theme & transparency
 
-vim.cmd.colorscheme 'tokyonight'
+vim.cmd.colorscheme 'tokyonight-night'
 
 vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' }) --set transparent for current buffer
 vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' }) --Set transparency for non current buffers

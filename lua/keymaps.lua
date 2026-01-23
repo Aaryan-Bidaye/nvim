@@ -4,10 +4,6 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 vim.keymap.set('n', '<leader>c', ':nohlsearch<CR>', { desc = 'Clear search highlights' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 -- TIP: Disable arrow keys in normal mode
-vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Center screen when jumping
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Next search result (centered)' })
@@ -81,3 +77,11 @@ vim.keymap.set('n', '-', '<CMD>Oil --float<CR>', { desc = 'Open parent directory
 --JupyNvim
 vim.keymap.set('n', '<leader>no', '<CMD>JupyNbOpen<CR>', { desc = 'Open Jupyter Notebook' })
 vim.keymap.set('n', '<leader>ns', '<CMD>JupyNbSave<CR>', { desc = 'Save Jupyter Notebook' })
+
+--make
+vim.keymap.set('n', '<leader>m', '<CMD>make<CR>', { desc = 'Make' })
+vim.keymap.set('n', '<leader>mc', '<CMD>make clean<CR>', { desc = 'Make clean' })
+vim.keymap.set('n', '<leader>mr', '<CMD>make run<CR>', { desc = 'Make run' })
+
+--cwd to current file
+vim.keymap.set('n', '<leader>dc', '<CMD>set autochdir<CR>', { desc = 'Change working directory to the current file' })
