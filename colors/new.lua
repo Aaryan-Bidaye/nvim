@@ -10,35 +10,35 @@ vim.o.background = 'dark'
 vim.g.colors_name = 'mytheme'
 
 local p = {
-  bg = '#272822',
-  bg_alt = '#1f201c',
-  surface = '#2e2f29',
-  cursorln = '#32342c',
-  selection = '#49483e',
-  border = '#3a3b35',
+  bg = '#1b1f27', -- cooler, slightly bluer dark
+  bg_alt = '#151922',
+  surface = '#222733',
+  cursorln = '#272c38',
+  selection = '#323846',
+  border = '#2c3240',
 
-  fg = '#f8f8f2',
-  muted = '#a6a69c',
-  comment = '#75715e',
+  fg = '#e5e9f0',
+  muted = '#8f98a3',
+  comment = '#5f6a78',
 
-  pink = '#f92672', -- Monokai keyword red/pink
-  orange = '#fd971f',
-  yellow = '#e6db74',
-  green = '#a6e22e',
-  aqua = '#66d9ef', -- cyan/blue-ish in this palette
-  purple = '#ae81ff',
-  red = '#ff5555',
+  pink = '#ff7aa2', -- less Monokai, more modern soft pink
+  orange = '#f5a97f', -- toned down, less neon
+  yellow = '#e5c07b', -- warmer, not bright lemon
+  green = '#7bd88f', -- softer green (less toxic neon)
+  aqua = '#4fd6ff', -- cleaner cyan
+  purple = '#a78bfa', -- slightly cooler purple
+  red = '#ff6b6b', -- KEEP EXACT
 
-  info = '#66d9ef',
-  warn = '#e6db74',
-  error = '#f92672',
-  hint = '#a6e22e',
-  success = '#a6e22e',
+  info = '#4fd6ff',
+  warn = '#e5c07b',
+  error = '#ff6b6b',
+  hint = '#7bd88f',
+  success = '#7bd88f',
 
-  diff_add = '#113311',
-  diff_change = '#102a3a',
-  diff_delete = '#341a1a',
-  diff_text = '#1d3f55',
+  diff_add = '#1a3a2a',
+  diff_change = '#1c2f45',
+  diff_delete = '#3a1f28',
+  diff_text = '#274964',
 }
 
 local O = {
