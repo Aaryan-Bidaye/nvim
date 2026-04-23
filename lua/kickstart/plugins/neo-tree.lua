@@ -15,6 +15,7 @@ return {
   },
   opts = {
     filesystem = {
+      hijack_netrw_behavior = 'disabled',
       window = {
         position = 'right',
         mappings = {
